@@ -37,8 +37,14 @@ print(max([W*H-sum(list(map(sum,tmp))),0]))
 """
 
 # C
-
-
+"""
+S = input()
+count = 0
+for i in range(1,len(S)):
+    if S[i-1] != S[i]:
+        count += 1
+print(count)
+"""
 # D
 
 
