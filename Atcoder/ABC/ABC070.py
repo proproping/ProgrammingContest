@@ -24,8 +24,17 @@ else:
 """
 
 # C
-
-
+"""
+from fractions import gcd
+N = int(input())
+T = list(set([int(input()) for _ in range(N)]))
+ans = 1
+def lcm(a,b):
+    return (a*b)//gcd(a,b)
+for i in range(len(T)):
+    ans = lcm(ans,T[i])
+print(ans)
+"""
 # D
 
 

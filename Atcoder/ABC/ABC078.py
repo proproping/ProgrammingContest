@@ -26,8 +26,12 @@ print(count)
 """
 
 # C
-
-
+"""
+N,M = map(int,input().split())
+time = M*1900+(N-M)*100
+p = (1/2)**M
+print(int(time*(1/p)))
+"""
 # D
 
 

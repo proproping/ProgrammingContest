@@ -21,31 +21,18 @@ print(len(d))
 # C
 """
 N,Y = map(int,input().split())
-x = 0
-y = 0
-z = 0
-for i in range(N):
-    if (Y-10000*x)/5000 == (N-x):
+A,B,C = -1,-1,-1
+flag = False
+for i in range(N+1):
+    if flag:
         break
-    else:
-        x += 1
-for j in range(N):
-    if (Y-10000*x-5000*y)/1000 == (N-x-y):
-        break
-    else:
-        y += 1
-for k in range(N):
-    if (Y-10000*x-5000*y-1000*z) == 0:
-        break
-    else:
-        z += 1
-ans = [x,y,z]
-if (Y-10000*x-5000*y-1000*z) == 0:
-    print(*ans,sep=" ")
-else:
-    print("-1 -1 -1")
+    for j in range(N+1-i):
+        if i*10000 + j*5000 + (N-i-j)*1000 == Y and (N-i-j) >= 0:
+            A,B,C = i,j,(N-i-j)
+            flag = True
+            break
+print(A,B,C)
 """
-
 # D
 
 
@@ -53,3 +40,17 @@ else:
 
 
 # F
+"""
+10000
+10
+6
+2
+1
+
+5000
+1
+5
+
+1000
+1
+"""
