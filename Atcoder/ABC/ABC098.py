@@ -27,7 +27,25 @@ print(count)
 """
 
 # C
-
+"""
+from collections import Counter
+N = int(input())
+S = list(input())
+c = Counter(S[1:])
+ans = 0+c["E"]
+now = S[0]
+e = c["E"]
+w = 0
+for i in range(1,N):
+    if now == "W":
+        w += 1
+    now = S[i]
+    if now == "E":
+        e -= 1
+    if w+e < ans:
+        ans = w+e
+print(ans)
+"""
 
 # D
 

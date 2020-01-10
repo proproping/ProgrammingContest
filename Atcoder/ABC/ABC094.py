@@ -33,7 +33,18 @@ print(min(ans))
 """
 
 # C
-
+"""
+N = int(input())
+X = list(map(int,input().split()))
+Y = sorted(X)
+index = N//2
+a,b = Y[index],Y[index-1]
+for i in range(N):
+    if X[i] < a:
+        print(a)
+    else:
+        print(b)
+"""
 
 # D
 

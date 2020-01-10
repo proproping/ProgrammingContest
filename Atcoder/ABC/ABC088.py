@@ -29,10 +29,24 @@ print(sum(alice)-sum(bob))
 """
 
 # C
-
+"""
 c = [list(map(int,input().split())) for _ in range(3)]
-
-
+a = [0]*3
+b = c[0]
+a[1] = c[1][0]-b[0]
+a[2] = c[2][0]-b[0]
+flag = False
+ans = "Yes"
+for i in range(3):
+    if flag:
+        break
+    for j in range(3):
+        if c[i][j] != a[i]+b[j]:
+            ans = "No"
+            flag = True
+            break
+print(ans)
+"""
 # D
 
 
