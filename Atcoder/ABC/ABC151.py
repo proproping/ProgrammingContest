@@ -42,7 +42,7 @@ print(ac,wa)
 """
 
 #D
-from itertools import combinations
+"""
 from collections import deque
 H,W = map(int,input().split())
 maze = []
@@ -51,7 +51,7 @@ dy = [0,1,0,-1]
 for i in range(H):
     maze.append(list(input()))
 def bfs(sx,sy):
-    INF = 10**9
+    INF = -1
     cost = [[INF]*W for _ in range(H)]
     P = deque()
     P.append([sx,sy])
@@ -69,13 +69,15 @@ def solve():
     ans = 0
     for i in range(H):
         for j in range(W):
-            sx,sy = i,j
-            cs = bfs(sx,sy)
-            for k in range(len(cs)):
-                if max(cs[k]) > ans:
-                    ans = max(cs[k])
-    return print(ans)
-solve()
+            if maze[i][j] != "#":
+                sx,sy = i,j
+                cs = bfs(sx,sy)
+                for k in range(len(cs)):
+                    if max(cs[k]) > ans:
+                        ans = max(cs[k])
+    return ans
+print(solve())
+"""
 
 #E
 
