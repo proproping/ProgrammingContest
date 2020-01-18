@@ -42,14 +42,21 @@ print(ac,wa)
 """
 
 #D
-"""
+
 from collections import deque
 H,W = map(int,input().split())
 maze = []
 dx = [1,0,-1,0]
 dy = [0,1,0,-1]
+ls = []
+count = 0
 for i in range(H):
-    maze.append(list(input()))
+    tmp = list(input())
+    maze.append(tmp)
+    for j in range(W):
+        if tmp[j] != "#":
+            ls.append([i,j])
+            count += 1
 def bfs(sx,sy):
     INF = -1
     cost = [[INF]*W for _ in range(H)]
@@ -67,17 +74,16 @@ def bfs(sx,sy):
     return cost
 def solve():
     ans = 0
-    for i in range(H):
-        for j in range(W):
-            if maze[i][j] != "#":
-                sx,sy = i,j
-                cs = bfs(sx,sy)
-                for k in range(len(cs)):
-                    if max(cs[k]) > ans:
-                        ans = max(cs[k])
+    for i in ls:
+        sx,sy = i[0],i[1]
+        cs = bfs(sx,sy)
+        for k in range(len(cs)):
+            if ans == count:
+                break
+            if max(cs[k]) > ans:
+                ans = max(cs[k])
     return ans
 print(solve())
-"""
 
 #E
 
