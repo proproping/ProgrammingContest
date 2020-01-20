@@ -51,15 +51,26 @@ print(ans)
 
 # D
 """
+import math
 a,b,x = map(int,input().split())
-cap = b*a**2
-tmp = cap
-ans = 90
-
-while tmp > x:
-
+def f(t):
+    t = math.radians(t)
+    if a * math.tan(t) <= b:
+        return a**2 * b - a**3 * math.tan(t) / 2
+    else:
+        return b**2 / math.tan(t) * a / 2
+tmax = 90
+tmin = 0
+while True:
+    tmid = tmin + (tmax-tmin) / 2
+    if abs(f(tmid)-x) <= 10**(-9):
+        break
+    if f(tmid) < x:
+        tmax = tmid
+    else:
+        tmin = tmid
+print(tmid)
 """
-
 # E
 
 

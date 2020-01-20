@@ -43,17 +43,19 @@ else:
 # D
 """
 import itertools
+import bisect
 N = int(input())
-L = map(int,input().split())
-tmp = list(itertools.combinations(L,3))
+L = sorted(list(map(int,input().split())))
 ans = 0
-for i in range(len(tmp)):
-    if abs(tmp[i][1] - tmp[i][2]) < tmp[i][0]:
-        if tmp[i][0] < (tmp[i][1] + tmp[i][2]):
-            ans += 1
+for i in range(N-2):
+    a = L[i]
+    for j in range(i+1,N-1):
+        b = L[j]
+        ind_cmin = j+1
+        ind_cmax = bisect.bisect_left(L,a+b)-1
+        ans += ind_cmax - ind_cmin + 1
 print(ans)
 """
-
 # E
 
 

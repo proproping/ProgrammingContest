@@ -30,6 +30,7 @@ print(count)
 """
 
 # C
+"""
 from collections import deque
 import numpy as np
 N = int(input())
@@ -58,6 +59,7 @@ while True:
             st,en = -1,-1
     tmp.popleft()
 print(count)
+"""
 # D
 
 
