@@ -25,21 +25,18 @@ print(ans)
 """
 
 # B
-"""
-import numpy
-N = int(input())
-A = list(map(int,input().split()))
-tmp1 = [A[0]]
-tmp2 = [sum(A)]
-for i in range(1,N):
-    tmp1.append(tmp1[i-1]+A[i])
-    tmp2.append(tmp2[i-1]-A[i-1])
-tmp1 = numpy.array(tmp1)
-tmp2 = numpy.array(tmp2)
-ans = list(map(abs,list(tmp1 - tmp2)))
-print(min(ans))
-"""
-
+# N = int(input())
+# A = list(map(int,input().split()))
+# mid = sum(A)/2
+# length = 0
+# i = 0
+# while True:
+#     if length >= mid:
+#         length = min(abs(length-mid),abs(length-mid-A[i-1]))+mid
+#         break
+#     length += A[i]
+#     i += 1
+# print(int(length-(sum(A)-length)))
 # C
 
 
