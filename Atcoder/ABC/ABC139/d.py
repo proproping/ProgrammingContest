@@ -1,0 +1,16 @@
+import sys
+import os
+f = open('input.txt','r')
+sys.stdin = f
+
+def main():
+    N = int(input())
+    if N == 1:
+        print(0)
+    elif N%2 != 0:
+        print((1+(N-1))*((N-1)//2))
+    else:
+        print((1+(N-1))*((N-1)//2)+(N-1)//2+1)
+
+if __name__ == '__main__':
+    main()
