@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     a,b = map(int,input().split())
     if a*b%2 == 0:

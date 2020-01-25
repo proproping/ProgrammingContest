@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     mat = [list(map(int,input().split())) for i in range(3)]
     ans = 0

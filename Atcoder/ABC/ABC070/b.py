@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     A,B,C,D = map(int,input().split())
     alice = set(list(range(A,B+1)))

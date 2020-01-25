@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N = int(input())
     a = [[i,int(tmp)] for i, tmp in enumerate(input().split(),1)]

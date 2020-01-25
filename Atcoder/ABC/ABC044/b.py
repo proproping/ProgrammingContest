@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     w = list(input())
     tmp1 = sorted(list(set(w)))

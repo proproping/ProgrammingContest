@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     inputs = [input() for i in range(2)]
     a = int(inputs[0])

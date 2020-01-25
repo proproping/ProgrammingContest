@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     r,D,x2000 = map(int,input().split())
     xi = r*x2000-D

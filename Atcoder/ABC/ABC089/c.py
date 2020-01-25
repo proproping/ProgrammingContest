@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     from itertools import combinations
     dic = dict(zip(list("MARCH"),[0]*len("MARCH")))

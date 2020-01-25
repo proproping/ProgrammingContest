@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     X = input()
     if X[0] not in ["c","o","k","u"]:

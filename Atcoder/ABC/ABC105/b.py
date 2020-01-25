@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N = int(input())
     c = list(range(0,int(N/4)+1))

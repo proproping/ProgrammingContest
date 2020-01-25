@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,Q = map(int,input().split())
     mat = [list(map(int,input().split())) for i in range(Q)]

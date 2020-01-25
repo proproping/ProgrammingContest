@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     c = [list(map(int,input().split())) for _ in range(3)]
     a = [0]*3

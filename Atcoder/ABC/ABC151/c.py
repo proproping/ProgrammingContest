@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,M = map(int,input().split())
     dic = dict(zip(list(range(1,N+1)),[0]*N))

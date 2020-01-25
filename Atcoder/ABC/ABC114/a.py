@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     X = int(input())
     if abs(5-X) == 0 or abs(5-X) == 2:

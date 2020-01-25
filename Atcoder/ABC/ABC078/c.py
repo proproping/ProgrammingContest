@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,M = map(int,input().split())
     time = M*1900+(N-M)*100

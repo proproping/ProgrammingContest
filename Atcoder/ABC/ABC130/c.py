@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     W,H,x,y = map(float,input().split())
     if y == (H/W)*x and y == H - (H/W)*x:

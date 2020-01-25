@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,K = map(int,input().split())
     dice = list(range(1,N+1))

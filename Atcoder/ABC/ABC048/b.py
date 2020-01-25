@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     a,b,x = map(int,input().split())
     tmp1 = b//x

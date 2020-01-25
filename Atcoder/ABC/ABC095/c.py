@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     A,B,C,X,Y = map(int,input().split())
     if A > 2*C and B > 2*C:

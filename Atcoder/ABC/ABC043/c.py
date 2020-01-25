@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
     N = int(input())

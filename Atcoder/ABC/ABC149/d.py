@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,K = map(int,input().split())
     R,S,P = map(int,input().split())

@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,K = map(int,input().split())
     l = sorted(list(map(int,input().split())),reverse = 1)

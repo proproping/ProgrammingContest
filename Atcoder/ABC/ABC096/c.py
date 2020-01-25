@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     H,W = map(int,input().split())
     s = [list(input()) for _ in range(H)]

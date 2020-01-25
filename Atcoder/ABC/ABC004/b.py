@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     import numpy as np
     c = [np.array(list(input())) for i in range(4)]

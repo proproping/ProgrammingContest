@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     x,a,b = map(int,input().split())
     if abs(x-a) > abs(x-b):

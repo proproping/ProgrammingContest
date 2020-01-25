@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     antenna = [int(input()) for i in range(5)]
     k = int(input())
