@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     A,B,C,K = map(int,input().split())
     if abs(A-B) > 10**18:

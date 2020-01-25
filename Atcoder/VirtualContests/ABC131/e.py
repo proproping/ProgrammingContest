@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     N,K = map(int,input().split())
     if K > (N-1)*(N-2)//2:

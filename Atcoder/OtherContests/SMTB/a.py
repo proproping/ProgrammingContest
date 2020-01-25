@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     one = list(map(int,input().split()))
     two = list(map(int,input().split()))
