@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     day = str(input())
     dic = dict(zip(["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],[5,4,3,2,1,0,0]))

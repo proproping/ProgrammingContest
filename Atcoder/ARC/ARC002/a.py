@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     Y = int(input())
     if Y%400 == 0:

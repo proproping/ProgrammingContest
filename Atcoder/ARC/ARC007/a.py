@@ -1,8 +1,3 @@
-import sys
-import os
-f = open('input.txt','r')
-sys.stdin = f
-
 def main():
     X = str(input())
     s = list(input())
