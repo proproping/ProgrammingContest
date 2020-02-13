@@ -2,51 +2,47 @@ import numpy as np
 def main():
     N = int(input())
     C = list(map(int,input().split()))
-    oddC = np.array([C[i] for i in range(N) if i%2 == 0])
-    evenC = np.array([C[i] for i in range(N) if i%2 != 0])
-    minoddC = min(oddC)
-    minC = min(C)
     Q = int(input())
     S = [list(map(int,input().split())) for _ in range(Q)]
-    oddlen = len(oddC)
-    evenlen = len(evenC)
+    oddC = np.array([C[i] for i in range(N) if i%2 == 0])
+    evenC = np.array([C[i] for i in range(N) if i%2 != 0])
+    lenodd = len(oddC)
+    minoddC = min(oddC)
+    minC = min(C)
+    oddsale = 0
+    holdsale = 0
     ans = 0
-    for i in S:
-        if i[0] == 1:
-            x = i[1]-1
-            a = i[2]
+    for i in range(Q):
+        if S[i][0] == 1:
+            t,x,a = map(int,S[i])
             if x%2 != 0:
-                if evenC[x//2] >= a:
-                    ans += a
-                    evenC[x//2] -= a
-                    minC = min(minC,evenC[x//2])
-                else:
-                    continue
-            else:
-                if oddC[x//2] >= a:
-                    ans += a
+                # 奇数なら
+                if oddC[x//2]-oddsale-holdsale >= a:
                     oddC[x//2] -= a
-                    minoddC = min(minoddC,oddC[x//2])
+                    minoddC = min(minoddC,oddC[x//2]-oddsale-holdsale)
                     minC = min(minC,minoddC)
-                else:
-                    continue
+                    ans += a
 
-        elif i[0] == 2:
-            a = i[1]
+            else:
+                #偶数なら
+                if evenC[x//2-1]-holdsale >= a:
+                    evenC[x//2-1] -=a
+                    minC = min(minC,evenC[x//2-1]-holdsale)
+                    ans += a
+        elif S[i][0] == 2:
+            t,a = map(int,S[i])
             if minoddC >= a:
-                ans += a*oddlen
-                oddC -= a
                 minoddC -= a
                 minC = min(minC,minoddC)
-            else:
-                continue
-        else:
-            a = i[1]
+                oddsale += a
+                ans += a*lenodd
+        elif S[i][0] == 3:
+            t,a = map(int,S[i])
             if minC >= a:
-                ans += a*(oddlen+evenlen)
-                evenC -= a
-                oddC -= a
+                minoddC -= a
                 minC -= a
+                holdsale += a
+                ans += a*N
     print(ans)
 
 if __name__ == '__main__':

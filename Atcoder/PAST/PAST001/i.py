@@ -1,9 +1,10 @@
 import numpy as np
 
 def main():
-    a = np.array([1,2,3])
-    a -= 1
-    print(a)
+    N,M = map(int,input().split())
+    sc = [input().split() for _ in range(M)]
+    
+
 
 if __name__ == '__main__':
     main()
