@@ -1,32 +1,11 @@
+from collections import Counter
 def main():
     S = list(input())
-    nf,wf,sf,ef = False,False,False,False
-    for i in range(len(S)-1):
-        if S[i] == "N":
-            if sf:
-                sf = False
-            else:
-                nf = True
-        elif S[i] == "W":
-            if ef:
-                ef = False
-            else:
-                wf = True
-        elif S[i] == "S":
-            if nf:
-                nf = False
-            else:
-                sf = True
-        else:
-            if wf:
-                wf = False
-            else:
-                ef = True
-    if nf or wf or sf or ef:
-        print("No")
-    else:
+    c = Counter(S)
+    if ((c["N"] == 0 and c["S"] == 0) or (c["N"] > 0 and c["S"] > 0)) and ((c["W"] == 0 and c["E"] == 0) or (c["W"] > 0 and c["E"] > 0)):
         print("Yes")
-
+    else:
+        print("No")
 
 if __name__ == '__main__':
     main()
