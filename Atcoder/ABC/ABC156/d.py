@@ -1,23 +1,20 @@
-import math
+def mod_comb(n,k,mod):
+    result = 1
+    for i in range(n-k+1,n+1):
+        result *= i
+        result %= mod
+    for i in range(1,k+1):
+        result *= pow(i,mod-2,mod)
+        result %= mod
+    return result
 
 def main():
     n,a,b = map(int,input().split())
-    limit = math.floor(n/2)
-    if a > limit:
-        a = n - a
-    if b > limit:
-        b = n - b
-    table = [0]*limit
-    table[0] = n
-    for i in range(1,limit):
-        table[i] = table[i-1]*(n-i)//(i+1)
-    if n%2 != 0:
-        ans = sum(table)*2+1
-    else:
-        ans = sum(table)*2+1-table[-1]
-    ans -= (table[a-1] + table[b-1])
+    mod = 10**9+7
+    ans = pow(2,n,mod)-1
+    ans = (ans - mod_comb(n,a,mod))%mod
+    ans = (ans - mod_comb(n,b,mod))%mod
     print(ans)
-
 
 if __name__ == '__main__':
     main()
