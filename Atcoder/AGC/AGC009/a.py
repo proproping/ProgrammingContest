@@ -1,13 +1,15 @@
-import numpy as np
-
 def main():
     N = int(input())
-    A,B = np.array([0]*N),np.array([0]*N)
+    A = [None]*N
+    B = [None]*N
     for i in range(N):
         A[i],B[i] = map(int,input().split())
+    ans = 0
     for i in range(N-1,-1,-1):
-        tmp = (B[i] - A[i]%B[i])
-        
+        if (A[i]+ans)%B[i] == 0:
+            continue
+        ans += (B[i] - (A[i]+ans)%B[i])
+    print(ans)
 
 if __name__ == '__main__':
     main()
