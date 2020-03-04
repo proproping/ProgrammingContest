@@ -49,21 +49,21 @@ class UnionFind:
 
 def main():
     N,M,K = map(int,input().split())
-    ans = [0]*N
-    uf = UnionFind(M+K+2)
-    block_uf = UnionFind(M+1)
-    friend_uf = UnionFind(K+1)
-    for i in range(M):
-        a,b = map(int,input().split())
-        uf.unite(a,b)
-        block_uf.unite(a,b)
-    for i in range(K):
-        c,d = map(int,input().split())
-        uf.unite(c,d)
-        friend_uf.unite(c,d)
+    adj = [[] for _ in range(N)]
+    ans = [None]*N
+    uf = UnionFind(N)
+    for i in range(M+K):
+        a,b = map(lambda x : int(x)-1,input().split())
+        if i < M:
+            uf.unite(a,b)
+            adj[a].append(b)
+            adj[b].append(a)
+        elif uf.same(a,b):
+            adj[a].append(b)
+            adj[b].append(a)
     for i in range(N):
-        ans[i] = uf.size(i) - 1
-    print(ans)
+        ans[i] = uf.size(i) - len(adj[i]) - 1
+    print(*ans,sep=" ")
 
 
 if __name__ == '__main__':
