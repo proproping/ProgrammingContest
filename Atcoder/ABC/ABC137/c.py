@@ -1,14 +1,14 @@
+from collections import defaultdict
+
 def main():
     N = int(input())
-    s = {}
+    s = defaultdict(int)
     ans = 0
     for i in range(N):
         a = "".join(sorted(input()))
-        if a not in s:
-            s.setdefault(a,0)
-        else:
-            s[a] += 1
-            ans += s[a]
+        s[a] += 1
+        if s[a] != 1:
+            ans += (s[a]-1)
     print(ans)
 
 if __name__ == '__main__':

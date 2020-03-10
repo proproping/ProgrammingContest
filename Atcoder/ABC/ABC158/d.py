@@ -7,10 +7,7 @@ def main():
     for i in range(Q):
         tmp = list(input().split())
         if tmp[0] == "1":
-            if revFlag:
-                revFlag = False
-            else:
-                revFlag = True
+            revFlag = not revFlag
         else:
             if tmp[1] == "1":
                 if revFlag:
