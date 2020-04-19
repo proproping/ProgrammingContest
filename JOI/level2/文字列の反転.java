@@ -8,8 +8,9 @@ public class Main {
         A = input.nextInt();
         B = input.nextInt();
         S = input.next();
-        StringBuffer str = new StringBuffer(S);
+        StringBuffer str = new StringBuffer(S.substring(A-1,B));
         String revS = str.reverse().toString();
-        System.out.println(S.substring(0,A-1)+revS.substring(A,B-1)+S.substring(B,S.length()));
+        String ans = S.substring(0,A-1) + revS + S.substring(B);
+        System.out.println(ans);
     }
 }
